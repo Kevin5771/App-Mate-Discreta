@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="/src/matematicas.png" type="image/x-icon">
+    <title>Calculadora de Placas</title>
+</head>
+<body>
+    <a href="/index.html" class="boton-inicio">Volver al Inicio</a>
+    
+    <div class="container">
+        <h1>Calculadora de Placas</h1>
+        <p>Las placas de vehículos en Guatemala tienen el formato 3 dígitos seguidos por 3 letras.</p>
+        <button onclick="calcularPlacas()">Calcular Placas Emitidas</button>
+        <p id="resultado"></p>
+    </div>
+
+    <script>
+        function calcularPlacas() {
+            const numerosPosibles = 10 * 10 * 10; 
+            const letrasPosibles = 27 * 27 * 27; 
+            const placasPosibles = numerosPosibles * letrasPosibles;
+
+            const resultadoElement = document.getElementById("resultado");
+            resultadoElement.innerHTML = `Se pueden emitir ${placasPosibles.toLocaleString()} placas en Guatemala.`;
+        }
+    </script>
+</body>
+</html>
